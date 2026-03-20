@@ -107,7 +107,7 @@ function getCardElement({ name = "sin título", link = "#" } = {}) {
   cardImage.alt = name;
   cardTitle.textContent = name;
 
-  deleteButton.addEvenListener("click", function () {
+  deleteButton.addEventListener("click", function () {
     cardElement.remove();
   });
 
@@ -120,7 +120,7 @@ function renderCard(name, link, container) {
 }
 
 initialCards.forEach(function (card) {
-  renderCard(card, name, card.link, cardsContainer);
+  renderCard(card.name, card.link, cardsContainer);
 });
 
 const addCardButton = document.querySelector(".profile__add-button");
@@ -148,7 +148,7 @@ function handleCardFormSubmit(evt) {
   const name = cardNameInput.value;
   const link = cardLinkInput.value;
 
-  renderCard(name, link, cardConstainer);
+  renderCard(name, link, cardsConstainer);
 
   newCardForm.reset();
 
