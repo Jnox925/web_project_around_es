@@ -26,3 +26,7 @@ Se muestran lugares de un recorrido que han realizado los viajeros de tripleten.
 -Borar tarjeta de imagen
 -Boton like funcional
 -Agregar nueva imagen
+
+GIT HUB PAGES:
+
+https://jnox925.github.io/web_project_around_es/
