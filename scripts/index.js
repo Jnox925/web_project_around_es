@@ -58,7 +58,6 @@ document.querySelectorAll(".popup").forEach((popup) => {
   });
 });
 
-
 //6.
 editButton.addEventListener("click", handleOpenEditModal);
 
@@ -107,7 +106,7 @@ editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 const cardsContainer = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template").content;
 
-function getCardElement({ name, link}) {
+function getCardElement({ name, link }) {
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
 
   const cardImage = cardElement.querySelector(".card__image");
@@ -146,7 +145,7 @@ const cardNameInput = newCardPopup.querySelector(
 const cardLinkInput = newCardPopup.querySelector(".popup__input_type_url");
 
 addCardButton.addEventListener("click", function () {
-  newCardForm,.reset();
+  newCardForm.reset();
   enableValidation(newCardForm);
   openModal(newCardPopup);
 });
@@ -161,7 +160,7 @@ function handleCardFormSubmit(evt) {
   const name = cardNameInput.value;
   const link = cardLinkInput.value;
 
-  renderCard(name, link, cardsConstainer);
+  renderCard(name, link, cardsContainer);
 
   newCardForm.reset();
 
@@ -170,23 +169,26 @@ function handleCardFormSubmit(evt) {
 
 newCardForm.addEventListener("submit", handleCardFormSubmit);
 
-
 const enableValidation = (formElement) => {
   const inputlist = Array.from(formElement.querySelectorAll(".popup__input"));
   const buttonElement = formElement.querySelector(".popup__button");
 
   const showInputError = (inputElement, errorMessage) => {
-    const errorElement = formElement.querySelector(`#${inputElement.name}-error`);
+    const errorElement = formElement.querySelector(
+      `#${inputElement.name}-error`,
+    );
     inputElement.classList.add("popup__input_type_error");
     errorElement.textContent = errorMessage;
     errorElement.classList.add("popup__error_visible");
   };
 
   const hideInputError = (inputElement) => {
-    const errorElement = formElement.querySelector(`#${inputElement.name}-error`);
+    const errorElement = formElement.querySelector(
+      `#${inputElement.name}-error`,
+    );
     inputElement.classList.remove("popup__input_type_error");
     errorElement.textContent = "";
-    errorElement.classList.remove("popup__error_visible")
+    errorElement.classList.remove("popup__error_visible");
   };
 
   const checkInputValidity = (inputElement) => {
@@ -198,24 +200,24 @@ const enableValidation = (formElement) => {
   };
 
   const toggleButtonState = () => {
-    const (hasInvalidInput) = inputlist.some((input) => !input.validity.valid);
+    const hasInvalidInput = inputlist.some((input) => !input.validity.valid);
 
-      if (hasInvalidInput) {
-        buttonElement.classList.add("popup__button_disabled");
-        buttonElement.description = true;
-      } else {
-        buttonElement.classList.remove("popup__button_disabled");
-        buttonElement.disabled = false;
-      }
+    if (hasInvalidInput) {
+      buttonElement.classList.add("popup__button_disabled");
+      buttonElement.disabled = true;
+    } else {
+      buttonElement.classList.remove("popup__button_disabled");
+      buttonElement.disabled = false;
+    }
   };
 
   inputlist.forEach((inputElement) => {
-    inputElement.addEventListener("input",() => {
+    inputElement.addEventListener("input", () => {
       checkInputValidity(inputElement);
-      toggleButtonsState();
+      toggleButtonState();
     });
   });
-  toggleButtonState(); 
+  toggleButtonState();
 };
 
 enableValidation(editProfileForm);
@@ -223,11 +225,9 @@ enableValidation(newCardForm);
 
 function handleEscClose(evt) {
   if (evt.key === "Escape") {
-    const openedPopup = document.querySelector("popup_is-opened");
+    const openedPopup = document.querySelector(".popup_is-opened");
     if (openedPopup) {
       closeModal(openedPopup);
-      }
+    }
   }
-};
-
-
+}
