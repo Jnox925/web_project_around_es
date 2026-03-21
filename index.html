@@ -74,13 +74,21 @@
               name="name"
               placeholder="Nombre"
               type="text"
+              requiered
+              minlength="2"
+              maxlength="48"
             />
+            <span class="popup__error" id="name-error"> </span>
             <input
               class="popup__input popup__input_type_description"
               name="description"
               placeholder="Acerca de mí"
               type="text"
+              required
+              minlength="2"
+              maxlength="200"
             />
+            <span class="popup__error" id="description-error"> </span>
             <button class="button popup__button" type="submit">Guardar</button>
           </form>
         </div>
@@ -99,8 +107,12 @@
               name="place-name"
               placeholder="Título"
               required
+              minlength="2"
+              maxlength="30"
               type="text"
             />
+            <span class="popup__error" id="place-name-error"> </span>
+
             <input
               class="popup__input popup__input_type_url"
               name="link"
@@ -108,6 +120,7 @@
               required
               type="url"
             />
+            <span class=""popup__error" id="link-error"></span>
             <button class="button popup__button" type="submit">Crear</button>
           </form>
         </div>
