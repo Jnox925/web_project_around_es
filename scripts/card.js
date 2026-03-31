@@ -1,5 +1,5 @@
 export class Card {
-  contructor({ came, link }, templateSelector) {
+  contructor({ name, link }, templateSelector) {
     this._name = name;
     this._link = link;
     this._templateSelector = templateSelector;
