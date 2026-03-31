@@ -60,6 +60,6 @@ export class FormValidator {
   }
 
   setEventListener() {
-    this._setEventListeners();
+    this._setEventListener();
   }
 }

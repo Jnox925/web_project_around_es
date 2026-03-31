@@ -1,4 +1,4 @@
-import { Card } from "./Card.js";
+import { Card } from "./card.js";
 import { FormValidator } from "./FormValidator.js";
 import { openModal, closeModal, setOverlayClose } from "./utils.js";
 
@@ -144,5 +144,5 @@ initialCards.forEach(renderCard);
 const editValidator = new FormValidator(validationConfig, editProfileForm);
 const newCardValidator = new FormValidator(validationConfig, newCardForm);
 
-editValidator.setEventListeners();
-newCardValidator.setEventListeners();
+editValidator.setEventListener();
+newCardValidator.setEventListener();
