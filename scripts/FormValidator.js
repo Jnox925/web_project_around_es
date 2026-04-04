@@ -1,5 +1,5 @@
 export class FormValidator {
-  contructor(config, formElement) {
+  constructor(config, formElement) {
     this._config = config;
     this._formElement = formElement;
     this._inputList = Array.from(
@@ -32,15 +32,15 @@ export class FormValidator {
 
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError(inputElemnt);
+      this._showInputError(inputElement);
     } else {
-      this._hideInputElement(inputElement);
+      this._hideInputError(inputElement);
     }
   }
 
   _toggleButtonState() {
     const hasInvalidInput = this._inputList.some(
-      (input) => !input.validiti.valid,
+      (input) => !input.validity.valid,
     );
 
     if (hasInvalidInput) {

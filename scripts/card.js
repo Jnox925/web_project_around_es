@@ -18,7 +18,7 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._deletebutton.addEventListener("click", () => {
+    this._deleteButton.addEventListener("click", () => {
       this._handleDeleteClick();
     });
   }
