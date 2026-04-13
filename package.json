@@ -1,0 +1,25 @@
+{
+  "name": "web_project_around_es",
+  "version": "1.0.0",
+  "description": "Education",
+  "keywords": [
+    "Cards",
+    "AroundUS",
+    "Js"
+  ],
+  "homepage": "https://github.com/Jnox925/web_project_around_es#readme",
+  "bugs": {
+    "url": "https://github.com/Jnox925/web_project_around_es/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jnox925/web_project_around_es.git"
+  },
+  "license": "ISC",
+  "author": "JuanAgudelo",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  }
+}
