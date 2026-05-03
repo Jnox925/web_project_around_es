@@ -18,7 +18,14 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img class="profile__image" src="./images/avatar.jpg" alt="Avatar" />
+          <div class="profile__avatar-container">
+            <img
+              class="profile__image"
+              src="./images/avatar.jpg"
+              alt="Avatar"
+            />
+            <div class="profile__avatar-edit"></div>
+          </div>
           <div class="profile__info">
             <h1 class="profile__title">Jacques Cousteau</h1>
             <button
@@ -46,11 +53,14 @@
                 ></button>
                 <div class="card__description">
                   <h2 class="card__title"></h2>
-                  <button
-                    aria-label="Botón Me gusta"
-                    class="card__like-button"
-                    type="button"
-                  ></button>
+                  <div class="card__like-container">
+                    <button
+                      aria-label="Botón Me gusta"
+                      class="card__like-button"
+                      type="button"
+                    ></button>
+                    <span class="card__like-count">0</span>
+                  </div>
                 </div>
               </li>
             </template>
@@ -137,6 +147,13 @@
         </div>
       </div>
       <script type="module" src="./page/index.js"></script>
+    </div>
+    <div class="popup" id="delete-popup">
+      <div class="popup__container">
+        <button type="button" class="popup__close"></button>
+        <h3 class="popup__title">¿Estás seguro?</h3>
+        <button type="button" class="popup__button">Sí</button>
+      </div>
     </div>
   </body>
 </html>
